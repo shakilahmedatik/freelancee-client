@@ -4,26 +4,10 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 //Import react-redux & redux
-import { createStore, combineReducers } from 'redux'
+import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-
-//User Reducer Function
-const authReducer = (state = {}, action) => {
-  switch (action.type) {
-    case 'LOGGED_IN_USER':
-      return { ...state, ...action.payload }
-    case 'LOGOUT':
-      return action.payload
-    default:
-      return state
-  }
-}
-
-//Combine Multiple Reducer
-const rootReducer = combineReducers({
-  user: authReducer,
-})
+import rootReducer from './components/reducers'
 
 //Redux Store
 const store = createStore(rootReducer, composeWithDevTools())

@@ -1,7 +1,13 @@
 import React from 'react'
+import { useSelector, userSelector, useStore } from 'react-redux'
 
 const Home = () => {
-  return <div className='container-fluid h1 p-5 text-center'>Home Page</div>
+  const { user } = useSelector(state => ({ ...state }))
+  return (
+    <div className='container-fluid h1 p-5 text-center'>
+      Home Page {JSON.stringify(user)}
+    </div>
+  )
 }
 
 export default Home
