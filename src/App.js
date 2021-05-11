@@ -4,15 +4,14 @@ import Register from './components/auth/Register'
 import Home from './components/service/Home'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import TopNav from './components/shared/navbar/TopNav'
-// import { ToastContainer } from 'react-toastify'
-// import 'react-toastify/dist/ReactToastify.css'
-// <ToastContainer position='top-center' />
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
   return (
     <BrowserRouter>
       <TopNav />
-
+      <ToastContainer position='top-center' />
       <Switch>
         <Route exact path='/'>
           <Home />

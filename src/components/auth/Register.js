@@ -2,7 +2,7 @@ import { useState } from 'react'
 import RegisterForm from '../shared/form/RegisterForm'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-// import { toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 
 const Register = () => {
   const [name, setName] = useState('')
@@ -20,11 +20,11 @@ const Register = () => {
         password,
       })
       console.log('REGISTER USER ===> ', res)
-      // toast.success('Register success. Please login.')
+      toast.success('Register success. Please login.')
       history.push('/login')
     } catch (err) {
       console.log(err)
-      // if (err.response.status === 400) toast.error(err.response.data)
+      if (err.response.status === 400) toast.error(err.response.data)
     }
   }
 
