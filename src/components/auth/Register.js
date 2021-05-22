@@ -1,20 +1,19 @@
 import { useState } from 'react'
 import RegisterForm from '../shared/form/RegisterForm'
-import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { register } from '../actions/auth'
 
 const Register = () => {
+  let history = useHistory()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  let history = useHistory()
-
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API}/register`, {
+      const res = await register({
         name,
         email,
         password,
