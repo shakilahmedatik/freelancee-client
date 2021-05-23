@@ -23,6 +23,12 @@ const TopNav = () => {
       </Link>
 
       {auth !== null && (
+        <Link className='nav-link' to='/dashboard'>
+          Dashboard
+        </Link>
+      )}
+
+      {auth !== null && (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a className='nav-link pointer' onClick={logout}>
           Logout

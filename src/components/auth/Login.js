@@ -7,8 +7,8 @@ import { useDispatch } from 'react-redux'
 
 const Login = () => {
   let history = useHistory()
-  const [email, setEmail] = useState('ryan@gmail.com')
-  const [password, setPassword] = useState('rrrrrr')
+  const [email, setEmail] = useState('shakilatik@gmail.com')
+  const [password, setPassword] = useState('atik123')
 
   const dispatch = useDispatch()
 
@@ -30,7 +30,7 @@ const Login = () => {
           type: 'LOGGED_IN_USER',
           payload: res.data,
         })
-        history.push('/')
+        history.push('/dashboard')
       }
     } catch (err) {
       console.log(err)
