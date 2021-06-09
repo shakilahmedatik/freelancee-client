@@ -1,11 +1,9 @@
 import { useState } from 'react'
-import RegisterForm from '../shared/form/RegisterForm'
-import { useHistory } from 'react-router-dom'
+import RegisterForm from '../components/RegisterForm'
 import { toast } from 'react-toastify'
 import { register } from '../actions/auth'
 
-const Register = () => {
-  let history = useHistory()
+const Register = ({ history }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { login } from '../actions/auth'
-import { useHistory } from 'react-router-dom'
-import LoginForm from '../shared/form/LoginForm'
+import LoginForm from '../components/LoginForm'
 import { useDispatch } from 'react-redux'
 
-const Login = () => {
-  let history = useHistory()
-  const [email, setEmail] = useState('shakilatik@gmail.com')
+const Login = ({ history }) => {
+  const [email, setEmail] = useState('vaxecol884@pidhoes.com')
   const [password, setPassword] = useState('atik123')
 
   const dispatch = useDispatch()

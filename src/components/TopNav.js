@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
@@ -29,8 +30,7 @@ const TopNav = () => {
       )}
 
       {auth !== null && (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a className='nav-link pointer' onClick={logout}>
+        <a className='nav-link pointer' href='#' onClick={logout}>
           Logout
         </a>
       )}
