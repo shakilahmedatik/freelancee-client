@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios'
 
-export const createConnectAccount = async (token) =>
+export const createConnectAccount = async token =>
   await axios.post(
     `${process.env.REACT_APP_API}/create-connect-account`,
     {},
@@ -9,9 +9,9 @@ export const createConnectAccount = async (token) =>
         Authorization: `Bearer ${token}`,
       },
     }
-  );
+  )
 
-export const getAccountStatus = async (token) =>
+export const getAccountStatus = async token =>
   axios.post(
     `${process.env.REACT_APP_API}/get-account-status`,
     {},
@@ -20,9 +20,9 @@ export const getAccountStatus = async (token) =>
         Authorization: `Bearer ${token}`,
       },
     }
-  );
+  )
 
-export const getAccountBalance = async (token) =>
+export const getAccountBalance = async token =>
   axios.post(
     `${process.env.REACT_APP_API}/get-account-balance`,
     {},
@@ -31,16 +31,16 @@ export const getAccountBalance = async (token) =>
         Authorization: `Bearer ${token}`,
       },
     }
-  );
+  )
 
-export const currencyFormatter = (data) => {
+export const currencyFormatter = data => {
   return (data.amount / 100).toLocaleString(data.currency, {
-    style: "currency",
+    style: 'currency',
     currency: data.currency,
-  });
-};
+  })
+}
 
-export const payoutSetting = async (token) =>
+export const payoutSetting = async token =>
   await axios.post(
     `${process.env.REACT_APP_API}/payout-setting`,
     {},
@@ -49,4 +49,28 @@ export const payoutSetting = async (token) =>
         Authorization: `Bearer ${token}`,
       },
     }
-  );
+  )
+
+export const getSessionId = async (token, hotelId) =>
+  await axios.post(
+    `${process.env.REACT_APP_API}/stripe-session-id`,
+    {
+      hotelId,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  )
+
+export const stripeSuccessRequest = async (token, hotelId) =>
+  await axios.post(
+    `${process.env.REACT_APP_API}/stripe-success`,
+    { hotelId },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  )
